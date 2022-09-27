@@ -62,7 +62,6 @@ const addWeatherCard = () => {
   };
 
   weatherCards.push(weatherItem);
-  console.log(cities);
 
   if (
     weatherCardList.hasChildNodes(emptyContainerMessage) &&
@@ -145,7 +144,6 @@ MainContainer.addEventListener("click", (e) => {
 
   if (e.target === fToCToggle && fToCToggle.checked) {
     Array.from(weatherCardList.children).forEach((card) => {
-      console.log(card.children[0].textContent)
       card.children[0].textContent = Math.round((card.children[0].textContent.split(' ')[0] * 9) / 5 + 32) + ' °F'
     })
   } else if (e.target === fToCToggle) {
