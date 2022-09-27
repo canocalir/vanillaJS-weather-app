@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla JS | Weather App</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="left-container">
+        <div class="light-switch">
+          <input type="checkbox" id="hide-checkbox" />
+          <label for="hide-checkbox" class="toggle">
+            <span class="toggle-button">
+              <span class="crater crater-1"></span>
+              <span class="crater crater-2"></span>
+              <span class="crater crater-3"></span>
+              <span class="crater crater-4"></span>
+              <span class="crater crater-5"></span>
+              <span class="crater crater-6"></span>
+              <span class="crater crater-7"></span>
+            </span>
+            <span class="star star-1"></span>
+            <span class="star star-2"></span>
+            <span class="star star-3"></span>
+            <span class="star star-4"></span>
+            <span class="star star-5"></span>
+            <span class="star star-6"></span>
+            <span class="star star-7"></span>
+            <span class="star star-8"></span>
+          </label>
+        </div>
+        <div class="degree-control">
+          <input class="tgl" id="tgb" type="checkbox" />
+
+          <label class="tgl-btn" for="tgb"></label>
+        </div>
+        <h1 id="heading">Vanilla JS Weather App</h1>
+        <div class="input-container">
+          <input type="text" id="input" placeholder="Enter City Name" />
+          <button id="button">Search</button>
+        </div>
+      </div>
+      <div class="weather-info-container"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
