@@ -16,7 +16,8 @@ const emptyContainerMessage = document.createElement("h3");
 emptyContainerMessage.setAttribute("id", "empty-message");
 emptyContainerMessage.textContent = `Empty City List. Please Add Some Cities.`;
 emptyContainerMessage.style.color = "#fff";
-emptyContainerMessage.style.fontSize = "1.1rem";
+emptyContainerMessage.style.fontSize = "1rem";
+emptyContainerMessage.style.paddingTop = "1rem"
 weatherCardList.append(emptyContainerMessage);
 
 let weatherData = [];
@@ -134,12 +135,12 @@ MainContainer.addEventListener("click", (e) => {
 
   if (e.target === toggleLight && toggleLight.checked) {
     weatherCardList.style.backgroundColor = "#DFB059a9";
-    mainHeading.style.color = "#DFB059a9";
-    searchButton.style.backgroundColor = "#DFB059a9";
+    mainHeading.style.color = "#FFF";
+    searchButton.style.backgroundColor = "#DFB059";
   } else if (e.target === toggleLight) {
-    weatherCardList.style.backgroundColor = "#33495fa9";
-    mainHeading.style.color = "#33495fa9";
-    searchButton.style.backgroundColor = "#33495fa9";
+    weatherCardList.style.backgroundColor = "#215e9bcc";
+    mainHeading.style.color = "#215e9bcc";
+    searchButton.style.backgroundColor = "#215e9bcc";
   }
 
   if (e.target === fToCToggle && fToCToggle.checked) {
@@ -159,7 +160,7 @@ weatherInput.addEventListener("change", (e) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   VANTA.CLOUDS({
-    el: "body",
+    el: ".left-container",
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
