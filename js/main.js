@@ -53,7 +53,7 @@ const fetchWeatherData = async () => {
 
 const addWeatherCard = () => {
   const { weather, name, main } = weatherData;
-  let firstWord = name.split(" ")[0];
+  let firstWord = name;
 
   const weatherItem = {
     temp: Math.round(main.temp),
@@ -71,16 +71,16 @@ const addWeatherCard = () => {
     emptyContainerMessage.remove();
   }
 
-  if (weatherCardList.childElementCount < 5 && !cities.includes(name)) {
+  if (weatherCardList.childElementCount < 4 && !cities.includes(name)) {
     cities.push(firstWord);
     weatherCardList.innerHTML += `
     <div class="weather-info-card">
     <h1 class="temp" id="temp">${Math.round(tempValue)} °C</h1>
     <h3 id="weather-type">
           <img id="icon" src="./assets/icons/${weather[0].icon}.png"/>
-          ${weather[0].description}
+          ${weather[0].description.length > 9 && firstWord.length > 6 ? weather[0].description.fontsize(3): weather[0].description}
           </h3>
-          <h2 id="city-name">${firstWord}</h2>
+          <h2 id="city-name">${weather[0].description.length > 9 && firstWord.length > 6 ? firstWord.fontsize(3):firstWord}</h2>
           <div id='close'>X</div>
         </div>
     `;
@@ -99,7 +99,7 @@ MainContainer.addEventListener("click", (e) => {
   const key = e.target;
 
   if (key.id === "button") {
-    if (weatherCardList.childElementCount < 5 && weatherInput.value) {
+    if (weatherCardList.childElementCount < 4 && weatherInput.value) {
       fetchWeatherData();
     } else if (!weatherInput.value || rescode === 404) {
       Swal.fire({
@@ -108,7 +108,7 @@ MainContainer.addEventListener("click", (e) => {
         text: "Please Enter a City Name!",
       });
       weatherInput.value = "";
-    } else if (weatherCardList.childElementCount >= 5) {
+    } else if (weatherCardList.childElementCount >= 4) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
