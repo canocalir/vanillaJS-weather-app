@@ -71,7 +71,7 @@ const addWeatherCard = () => {
     emptyContainerMessage.remove();
   }
 
-  if (weatherCardList.childElementCount < 6 && !cities.includes(name)) {
+  if (weatherCardList.childElementCount < 5 && !cities.includes(name)) {
     cities.push(firstWord);
     weatherCardList.innerHTML += `
     <div class="weather-info-card">
@@ -99,7 +99,7 @@ MainContainer.addEventListener("click", (e) => {
   const key = e.target;
 
   if (key.id === "button") {
-    if (weatherCardList.childElementCount < 6 && weatherInput.value) {
+    if (weatherCardList.childElementCount < 5 && weatherInput.value) {
       fetchWeatherData();
     } else if (!weatherInput.value || rescode === 404) {
       Swal.fire({
@@ -108,7 +108,7 @@ MainContainer.addEventListener("click", (e) => {
         text: "Please Enter a City Name!",
       });
       weatherInput.value = "";
-    } else if (weatherCardList.childElementCount >= 6) {
+    } else if (weatherCardList.childElementCount >= 5) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
